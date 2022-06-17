@@ -2,9 +2,13 @@
 @use '../mixins/' as *;
 
 .hero {
+    background-color: v.$veryLightGray;
+
     @include breakpoints-up(large) {
         display: flex;
-        align-items: center ;
+        align-items: center;
+        max-width: 90.5rem;
+        margin: auto;
     }
 
     &__image {
@@ -14,11 +18,14 @@
         background-repeat: no-repeat;
         background-position: center center;
         min-height: 17.5rem;
+
         @include breakpoints-up(large) {
             flex: 1;
             order: 2;    
             height: 41rem;
-            background-image: url('/images/bg-intro-desktop.svg') ;
+            background-image: url('/images/bg-intro-desktop.svg');
+            background-position: -0.8125rem -12.5rem;
+            background-size: 150%;
         }
 
         &::before {
@@ -30,14 +37,22 @@
             background-position: center bottom;
             height: 100%;
             width: 100%;
+
+            @include breakpoints-up(large) {
+                background-size: 100%;
+                left: 18%;
+            }
         }
     }
 
     &__text {
         text-align: center;
+
         @include breakpoints-up(large) {
             flex: 1;
-            order: 1;       
+            order: 1;    
+            text-align: left;  
+            padding-left: 11.875rem;
         }
         
         h1 {
@@ -46,6 +61,10 @@
         line-height: 1.15;
         margin-bottom: 1.5rem;
         color: v.$darkBlue;
+
+        @include breakpoints-up(large) {
+            font-size: v.$font-xlg;
+        }
         }
 
         p {

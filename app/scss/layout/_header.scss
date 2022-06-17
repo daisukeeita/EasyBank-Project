@@ -20,6 +20,10 @@
 
 .header {
 
+    max-width: 69.5625rem;
+    margin: 0 auto;
+    z-index: 10;
+
     &.open {
         .overlay {
             display: block;
@@ -49,7 +53,7 @@
         display: none;
         position: fixed;
         opacity: 0;
-        top: 3.95rem;
+        top: 3.84rem;
         right: 0;
         bottom: 0;
         left: 0;
